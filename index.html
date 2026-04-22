@@ -308,6 +308,81 @@
   .fcol ul a:hover { color:var(--white); }
   .footer-bot { display:flex;justify-content:space-between; }
   .footer-bot p { font-size:.6rem;letter-spacing:.2em;color:rgba(244,241,237,.18); }
+
+  /* ─── MOBILE ─── */
+  @media (max-width: 768px) {
+    body { cursor: auto; }
+    #cur, #cur-ring { display: none; }
+
+    nav { padding: 1.4rem 1.6rem; }
+    .nav-links { display: none; }
+
+    .hero-content { padding: 0 1.6rem 5rem; }
+    .hero-title { font-size: clamp(3rem, 13vw, 5rem); line-height: 0.95; }
+    .hero-sub { font-size: 0.95rem; max-width: 100%; }
+    .scroll-ind { right: 1.6rem; bottom: 2rem; }
+
+    .philosophy {
+      grid-template-columns: 1fr;
+      gap: 3.5rem;
+      padding: 6rem 1.6rem;
+    }
+    .phil-img-wrap { height: 380px; }
+    .phil-frame { display: none; }
+    .philosophy-text h2 { font-size: 2.4rem; }
+
+    .collection { padding: 5rem 1.6rem; }
+    .sec-header { flex-direction: column; align-items: flex-start; gap: 1.5rem; margin-bottom: 2.5rem; }
+    .door-grid { grid-template-columns: 1fr; gap: 2px; }
+    .door-card:first-child { grid-row: auto; height: 380px; }
+    .door-card:not(:first-child) { height: 280px; }
+    .door-info { opacity: 1; transform: none; }
+
+    .manifesto { padding: 7rem 1.6rem; }
+    .manifesto::before { font-size: 60vw; }
+    .manifesto blockquote { font-size: clamp(1.6rem, 6vw, 2.4rem); }
+
+    .img-break { height: 35vh; }
+    .img-break-label { right: 1.6rem; bottom: 1.5rem; font-size: 0.5rem; }
+
+    .details { padding: 5rem 1.6rem; }
+    .details-intro { margin-bottom: 3.5rem; }
+    .details-intro h2 { font-size: 2.2rem; }
+    .detail-strip {
+      flex-direction: column;
+      height: auto;
+      gap: 2px;
+    }
+    .ds-item { flex: none; height: 220px; }
+    .ds-item:hover { flex: none; }
+    .ds-label { opacity: 1; transform: none; }
+
+    .process { padding: 5rem 1.6rem; }
+    .process-grid { grid-template-columns: 1fr; gap: 2px; }
+    .process-item { padding: 2.5rem 2rem; }
+    .process-item h3 { font-size: 1.5rem; }
+
+    .finishes { padding: 5rem 1.6rem; }
+    .fin-grid { grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+    .fin-swatch { height: 160px; }
+
+    .cta { height: auto; padding: 7rem 1.6rem; }
+    .cta-content h2 { font-size: clamp(2rem, 8vw, 3.2rem); }
+    .btns { flex-direction: column; align-items: center; }
+    .btn-g, .btn-o { width: 100%; text-align: center; padding: 1.1rem 2rem; }
+
+    footer { padding: 4rem 1.6rem 2.5rem; }
+    .footer-top { grid-template-columns: 1fr; gap: 2.5rem; }
+    .footer-bot { flex-direction: column; gap: 0.8rem; }
+
+    .gold-rule { margin-bottom: 1.2rem; }
+  }
+
+  @media (max-width: 480px) {
+    .hero-title { font-size: clamp(2.6rem, 14vw, 4rem); }
+    .fin-grid { grid-template-columns: 1fr; }
+    .fin-swatch { height: 200px; }
+  }
 </style>
 </head>
 <body>
