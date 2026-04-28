@@ -387,6 +387,21 @@
 </head>
 <body>
 
+<!-- GATE -->
+<div id="gate" style="position:fixed;inset:0;z-index:99999;background:#080808;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Cormorant Garamond',Georgia,serif;">
+  <div style="text-align:center;padding:2rem;max-width:480px;">
+    <p style="font-size:.6rem;letter-spacing:.55em;text-transform:uppercase;color:#b5915a;margin-bottom:2rem;">Private Preview</p>
+    <h1 style="font-size:clamp(2rem,6vw,3.2rem);font-weight:300;line-height:1.1;color:#f4f1ed;margin-bottom:1rem;">Prana Doors</h1>
+    <p style="font-size:.85rem;font-weight:300;line-height:1.9;color:rgba(244,241,237,.45);margin-bottom:3rem;">This preview is private.<br>Contact Sydney Studio for access.</p>
+    <div style="width:1px;height:50px;background:linear-gradient(to bottom,#b5915a,transparent);margin:0 auto 2.5rem;"></div>
+    <a href="mailto:hello@sydneystudio.co" style="display:inline-block;padding:.95rem 3rem;border:1px solid rgba(181,145,90,.5);color:#b5915a;font-family:'Cormorant Garamond',Georgia,serif;font-size:.68rem;letter-spacing:.35em;text-transform:uppercase;text-decoration:none;">Contact Sydney Studio</a>
+    <div style="margin-top:3rem;">
+      <input id="pwd" type="password" placeholder="Or enter access code" style="background:transparent;border:none;border-bottom:1px solid rgba(244,241,237,.15);color:#f4f1ed;font-family:'Cormorant Garamond',Georgia,serif;font-size:.85rem;letter-spacing:.15em;padding:.6rem .2rem;width:220px;outline:none;text-align:center;" onkeydown="if(event.key==='Enter')checkPwd()"/>
+      <p id="pwd-err" style="font-size:.6rem;letter-spacing:.3em;color:#b5915a;margin-top:.8rem;opacity:0;transition:opacity .3s;">Incorrect code</p>
+    </div>
+  </div>
+</div>
+
 <div id="cur"></div>
 <div id="cur-ring"></div>
 
@@ -671,6 +686,27 @@
     const p=(window.innerHeight-r.top)/(window.innerHeight+r.height);
     pxImg.style.transform=`translateY(calc(-15% + ${(p-.5)*90}px))`;
   },{passive:true});
+
+  // ─── GATE ───
+  const ACCESS_CODE = 'prana2025';
+  const gate = document.getElementById('gate');
+  if (sessionStorage.getItem('prana_access') === '1') {
+    gate.style.display = 'none';
+  }
+  function checkPwd() {
+    const val = document.getElementById('pwd').value;
+    const err = document.getElementById('pwd-err');
+    if (val === ACCESS_CODE) {
+      sessionStorage.setItem('prana_access','1');
+      gate.style.transition = 'opacity .8s ease';
+      gate.style.opacity = '0';
+      setTimeout(() => gate.style.display = 'none', 800);
+    } else {
+      err.style.opacity = '1';
+      setTimeout(() => err.style.opacity = '0', 2000);
+      document.getElementById('pwd').value = '';
+    }
+  }
 
   // ─── NAV ───
   const nav=document.getElementById('nav');
