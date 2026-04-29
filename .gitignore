@@ -1,0 +1,19 @@
+# Raw assets — never commit these
+*.png
+*.jpg
+*.jpeg
+*.mov
+*.mp4
+*.gif
+
+# Scripts
+bake.py
+embed_images.py
+
+# MacOS
+.DS_Store
+
+# Backup files
+prana-doors-FINAL.html
+prana-doors-mockup.html
+*.bak
