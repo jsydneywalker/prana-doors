@@ -8,11 +8,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
-    --black: #ffffff;
-    --white: #0a0a0a;
+    --black: #080808;
+    --white: #f4f1ed;
     --gold: #b5915a;
     --gold-light: #d0a872;
-    --grey: #f0f0f0;
+    --grey: #111111;
     --mid: #1c1c1c;
   }
 
@@ -68,7 +68,7 @@
   @keyframes slowZoom { from{transform:scale(1.06)} to{transform:scale(1)} }
   .hero-grad {
     position:absolute;inset:0;
-    background:linear-gradient(to top,rgba(255,255,255,.97) 0%,rgba(255,255,255,.15) 55%,transparent 100%);
+    background:linear-gradient(to top,rgba(8,8,8,.97) 0%,rgba(8,8,8,.15) 55%,transparent 100%);
   }
   .hero-content { position:relative;z-index:2;padding:0 4.5rem 8rem;max-width:950px; }
 
@@ -242,7 +242,7 @@
     max-width:1440px;margin:4.5rem auto 0;
   }
   .process-item {
-    padding:4rem;background:var(--black);
+    padding:4rem;background:#ffffff;
     position:relative;overflow:hidden;transition:background .4s;
   }
   .process-item:hover { background:#0e0e0e; }
@@ -383,6 +383,62 @@
     .fin-grid { grid-template-columns: 1fr; }
     .fin-swatch { height: 200px; }
   }
+
+  /* ── WHITE THEME OVERRIDES ── */
+  body { background: #ffffff !important; color: #0a0a0a !important; }
+
+  /* Nav */
+  nav { background: rgba(255,255,255,0.92) !important; border-bottom: 1px solid rgba(0,0,0,0.08) !important; backdrop-filter: blur(20px); }
+  nav.scrolled { background: rgba(255,255,255,0.95) !important; border-bottom: 1px solid rgba(0,0,0,0.1) !important; }
+  .nav-logo, .nav-links a { color: #0a0a0a !important; }
+
+  /* Hero stays dark — image with dark overlay is fine */
+
+  /* Philosophy */
+  .philosophy-text h2, .philosophy-text p { color: #0a0a0a; }
+  .philosophy-text p { color: #555555 !important; }
+
+  /* Collection */
+  .collection { background: #f4f2ef !important; }
+  .sec-title, .section-title { color: #0a0a0a !important; }
+  .sec-link { color: var(--gold) !important; }
+
+  /* Manifesto */
+  .manifesto { background: #f4f2ef !important; }
+  .manifesto blockquote { color: #0a0a0a !important; }
+
+  /* Details */
+  .details-intro h2 { color: #0a0a0a !important; }
+  .details-intro p { color: #666666 !important; }
+
+  /* Process */
+  .process { background: #f4f2ef !important; }
+  .process-item { background: #ffffff !important; }
+  .process-item:hover { background: #faf8f5 !important; }
+  .process-item h3 { color: #0a0a0a !important; }
+  .process-item p { color: #666666 !important; }
+  .p-num { color: var(--gold) !important; }
+
+  /* Finishes */
+  .fin-name { color: #0a0a0a !important; }
+
+  /* Footer */
+  footer { background: #1a1a1a !important; }
+  .fbrand p, .fcol ul a, .footer-bot p { color: rgba(255,255,255,0.5) !important; }
+  .fbrand h3 { color: var(--gold) !important; }
+  .fcol h4 { color: var(--gold) !important; }
+  .fcol ul a:hover { color: #ffffff !important; }
+
+  /* Section eyebrows and labels */
+  .eyebrow, .section-eyebrow { color: var(--gold) !important; }
+
+  /* Gold rule stays */
+  .gold-rule { background: var(--gold) !important; }
+
+  /* Cursor — dark on white */
+  #cur { background: #0a0a0a !important; }
+  #cur-ring { border-color: rgba(0,0,0,0.3) !important; }
+
 </style>
 </head>
 <body>
